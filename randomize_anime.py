@@ -45,4 +45,7 @@ print(animeNested)
 
 
 
-# advanced (api - dataframes)
+# advanced (apit] - dataframes)
+# jikan
+
+#pandas
