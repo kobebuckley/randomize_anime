@@ -42,3 +42,7 @@ for x in animeNested[:]: # removing what does not match from the list
 
 print("nested below anime format version")
 print(animeNested)   
+
+
+
+# advanced (api - dataframes)
