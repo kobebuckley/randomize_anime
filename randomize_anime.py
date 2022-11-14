@@ -38,6 +38,11 @@ for x in animeNested:
         moodList = x
         print(moodList)
         
+        #! now needing to take that moodList and loop through it to find the length input match.
+        
+        
+        #! now needing to take that moodList and loop through it to find the animeType input match.
+        
         
         # print(mood + ' anime: ' + x[0]) # print the name of the anime with that mood 
         
