@@ -33,4 +33,21 @@ No tutorial Project #1
         3. from command line input to a website / UI interface
 
         
+        High Level Project:
+
+        Adding in Django + Node Js 
+        creating an app where people can join a room using a code, then choose anime based off of checkboxes, then can vote on which random anime selected is what they all want by casting votes. (Jikan APi)
+
+        (maybe a feature/checkbox for different levels, such as N5 japanese for learning etc.,)
+        group learn from an anime  ( Jisho and DeepL Apis')
+
+        other random api 
+
+        (trace.moe API)
+
+        ----------------------
+        Non APi 
+        https://www.reddit.com/r/LearnJapanese/comments/ccghhs/is_there_a_site_for_anime_transcripts_or_anime/?utm_source=amp&utm_medium=&utm_content=comments_view_all
+
         
+        to grab anime that has a script (will search websites that have scripts) and also have checboxes for episode, etc, 
