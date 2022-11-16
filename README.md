@@ -1,8 +1,8 @@
 # randomize_anime
 
-( Referencing Tina Huang Youtube Channel)
+( Referencing Tina Huang Youtube Channel Project Idea)
 
-No tutorial Project #1
+ Project #1 - Self Learning
 
     • Python
         ◦ Lists
@@ -63,3 +63,4 @@ No tutorial Project #1
 
 
 * figure out the rate limiter for APi's
+* later add a sign on feature to make accounts, track studying time, track who was in your group with u and how long, etc., 
