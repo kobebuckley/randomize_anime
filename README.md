@@ -60,4 +60,6 @@ No tutorial Project #1
 
         Can also add a link to grammar explanations (can be found easily throihg copy & pasting the grammar) -> through Control f or maybe a feature that does it for you?  (Itazuraneko.neocities.org)
 
-        
+
+
+* figure out the rate limiter for APi's
