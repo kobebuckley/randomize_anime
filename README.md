@@ -51,3 +51,13 @@ No tutorial Project #1
 
 
         to grab anime that has a script (will search websites that have scripts) and also have checboxes for episode, etc, 
+
+
+
+        -> found the anime eng + jp subs (Kitsunekko)
+        Jp -> https://kitsunekko.net/dirlist.php?dir=subtitles%2Fjapanese%2F
+        Eng -> https://kitsunekko.net/dirlist.php?dir=subtitles%2F
+
+        Can also add a link to grammar explanations (can be found easily throihg copy & pasting the grammar) -> through Control f or maybe a feature that does it for you?  (Itazuraneko.neocities.org)
+
+        

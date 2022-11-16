@@ -6,6 +6,7 @@ import requests
 #jikan - anime api
 
 #! the url query (?) should change depending on the checbox inputs of the user. 
+
 #! Then it should return the main info (TBA - name, genre, length(depending on certain integers), series vs movie, etc., )
 
 response= requests.get('https://api.jikan.moe/v4/anime') # getAnimeSearch on Jikan is the most likely relevant part to continue this project 
