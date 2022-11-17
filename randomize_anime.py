@@ -7,7 +7,14 @@ animeNested = [
 ]
 
 
-mood = input("What mood are u looking for?")
+# mood = input("What mood are u looking for?")
+import easygui as eg
+
+question = "This is your question"
+title = "This is your window title"
+listOfOptions = ["option 1", "option 2", "option 3"]
+
+choice = eg.multchoicebox(question , title, listOfOptions)
 
 
 for x in animeNested[:]: # removing what does not match from the list 
