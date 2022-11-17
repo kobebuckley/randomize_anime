@@ -26,7 +26,7 @@
         2. Use the input function (mood, runtime, series/movie)
 
         
-        Advanced Project: 
+        *(current) Advanced Project: 
         
         1. Jikan
         2. Pandas
@@ -63,6 +63,5 @@
 
 
 * figure out the rate limiter for APi's
-* later add a sign on feature to make accounts, track studying time, track who was in your group with u and how long, etc., 
+* later add a sign on feature to make accounts, track studying time, track who was in your group with u and how long, etc., maybe a forumn? something to include localition coding involvement / practice etc., 
 
-* quick test file 
