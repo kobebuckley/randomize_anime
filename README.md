@@ -29,7 +29,7 @@
         *(current) Advanced Project: 
         
         1. Jikan - pulling data from Jikan and putting it into the nested version  - *IN PROGRESS*
-        2. Pandas
+        2. Pandas - using dataframes instead of nests - *NEXT UP*
         3. from command line input to a website / UI interface - *COMPLETED* minimal version 
 
         
