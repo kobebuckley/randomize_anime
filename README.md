@@ -30,7 +30,7 @@
         
         1. Jikan
         2. Pandas
-        3. from command line input to a website / UI interface
+        3. from command line input to a website / UI interface - completed minimal version 
 
         
         High Level Project: (still thinking about overall ideas for this one ... )
