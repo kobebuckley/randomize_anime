@@ -28,9 +28,9 @@
         
         *(current) Advanced Project: 
         
-        1. Jikan
+        1. Jikan - pulling data from Jikan and putting it into the nested version  - *IN PROGRESS*
         2. Pandas
-        3. from command line input to a website / UI interface - completed minimal version 
+        3. from command line input to a website / UI interface - *COMPLETED* minimal version 
 
         
         High Level Project: (still thinking about overall ideas for this one ... )
