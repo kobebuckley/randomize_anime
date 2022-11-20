@@ -30,29 +30,30 @@ animeNested = [
 animeNestedJikan = []
 
 
-
+#! important query section
 # mood = input("What mood are u looking for?")
-import easygui as eg
+# import easygui as eg
 
-question = "This is your question"
-title = "This is your window title"
-listOfOptions = ["action", "comedy", "option 3"]
+# question = "What type of anime would u like?"
+# title = "Select One (for now) "
+# listOfOptions = ["Action", "comedy", "sci-fi"]
 
-choice = eg.multchoicebox(question , title, listOfOptions)
+# choice = eg.multchoicebox(question , title, listOfOptions)
 
-print(choice)
-choiceString = str(choice[0])
+# print(choice)
+# choiceString = str(choice[0])
 
-practiceUrlString = "test"
-print("The original string : " + str(practiceUrlString))
-print("The add string : " + str(choiceString))
+# practiceUrlString = "test"
+# print("The original string : " + str(practiceUrlString))
+# print("The add string : " + str(choiceString))
 
-practiceUrlString += choiceString
-print("The concatenated string is : " + practiceUrlString)
+# practiceUrlString += choiceString
+# print("The concatenated string is : " + practiceUrlString)
 
 
-#? Maybe adding the choice value to the Jikan url query? to then pull data from that category
-#? Python | Add one string to another
+# #? Maybe adding the choice value to the Jikan url query? to then pull data from that category
+# #? Python | Add one string to another
+# #! important query section
 
 
 
@@ -81,19 +82,13 @@ print("The concatenated string is : " + practiceUrlString)
 # print(html_text)
 #? add themes on top of genres at some point?
 OriginalGenreData = response.json()['data'][0]['genres']
+# v2OriginalGenreData = response.json()['data'][0]['genres'][0]['name'] #! working version to grab data
+# print("LOOK HERE")
+# print(v2OriginalGenreData)
+# print("LOOK HERE")
 
-# genreData = response.json()['data'][0]['genres'][1] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
+#! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
 # #? add in multiple mal_id? like the animeNested version 
-# # malIdMultiple = response.json()['data'][1]['genres'][0]['mal_id'] 
-# # malId = response.json()['genres']
-# print(genreData)
-# # print(malIdMultiple)
-
-# lengthOfGenre = len(OriginalGenreData)
-# print("There are : ")
-# # print(lengthOfGenre)
-# print(" genres in this anime!")
-# for x in OriginalGenreData[:]: # looping to find the length and return that id  
 lengthOfGenre = len(OriginalGenreData)
 print(lengthOfGenre)
 
@@ -102,20 +97,40 @@ genreArrayData = []
 counter = 0
 
 while counter < lengthOfGenre:
-    genreArrayData.append(str(OriginalGenreData[counter]))
+    genreArrayData.append(OriginalGenreData[counter])
     counter += 1
     genreArrayData = genreArrayData[:counter]
-print("The different genres in this anime are:", genreArrayData)
+print("The different genres in this anime are: ", genreArrayData)
+
+#! removing genres / anime that does not align with what the user wants
+
+#! looping the name variables of the genres 
+
+genreNamesOnlyArray = []
+lengthOfNames = len(genreArrayData)
+print("HERE IS THE LENGTH : ",lengthOfNames)
+counter = 0
+
+while counter < lengthOfNames:
+    genreNamesOnlyArray.append(genreArrayData[counter]['name'])
+    counter +=1
+    genreNamesOnlyArray = genreNamesOnlyArray[:counter]
+
+# genreNamesOnlyArray = genreArrayData[0]['name']
+print("here are the names of the genre : ", genreNamesOnlyArray)
 
 
+# for x in genreNamesOnlyArray[:]: # removing what does not match from the list 
+#     # print(x)
+#     if x[] != choiceString:
+#         genreNamesOnlyArray.remove(x)
 
+# print("nested below")
+# print(genreNamesOnlyArray)   
+        
 
     
-# #     if x[1] != choice[0]:
-# #         animeNested.remove(x)
-
-
-
+# #     if x[1] != choice[0
 
 #? testing to check for specific data values such as the mal id  out of the data
 # # newData = [obj for obj in genreData if 'mal_id' in obj[0]]
