@@ -15,6 +15,63 @@ response.status_code
 
 
 
+
+
+
+
+        
+animeNested = [
+["naruto","comedy","long","series"], 
+["jujutsu kaisen","action","short","movie"], 
+["chainsaw man","action","medium","series"] 
+]
+
+animeNestedJikan = []
+
+
+
+# mood = input("What mood are u looking for?")
+import easygui as eg
+
+question = "This is your question"
+title = "This is your window title"
+listOfOptions = ["action", "comedy", "option 3"]
+
+choice = eg.multchoicebox(question , title, listOfOptions)
+
+print(choice)
+choiceString = str(choice[0])
+
+practiceUrlString = "test"
+print("The original string : " + str(practiceUrlString))
+print("The add string : " + str(choiceString))
+
+practiceUrlString += choiceString
+print("The concatenated string is : " + practiceUrlString)
+
+
+#? Maybe adding the choice value to the Jikan url query? to then pull data from that category
+#? Python | Add one string to another
+
+
+
+
+
+
+# print(choice[0])
+
+# #? currently working for singular inputs, but multiple selections is not showing properly
+# #? the above problem might be solved by moving onto using the real data inputs
+
+# for x in animeNested[:]: # removing what does not match from the list 
+#     # print(x)
+#     if x[1] != choice[0]:
+#         animeNested.remove(x)
+
+# print("nested below")
+# print(animeNested)   
+        
+
 # print(response.status_code)
 
 # print(response.json())
@@ -44,43 +101,6 @@ print(malId)
 
 
 
-
-
-
-
-
-        
-# animeNested = [
-# ["naruto","comedy","long","series"], 
-# ["jujutsu kaisen","action","short","movie"], 
-# ["chainsaw man","action","medium","series"] 
-# ]
-
-
-
-# # mood = input("What mood are u looking for?")
-# import easygui as eg
-
-# question = "This is your question"
-# title = "This is your window title"
-# listOfOptions = ["action", "comedy", "option 3"]
-
-# choice = eg.multchoicebox(question , title, listOfOptions)
-
-# print(choice)
-# # print(choice[0])
-
-# #? currently working for singular inputs, but multiple selections is not showing properly
-# #? the above problem might be solved by moving onto using the real data inputs
-
-# for x in animeNested[:]: # removing what does not match from the list 
-#     # print(x)
-#     if x[1] != choice[0]:
-#         animeNested.remove(x)
-
-# print("nested below")
-# print(animeNested)   
-        
         
         # --------------------------------------------------------------------------------------
         
