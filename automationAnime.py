@@ -24,7 +24,7 @@ response.status_code
 animeNested = [
 ["naruto","comedy","long","series"], 
 ["jujutsu kaisen","action","short","movie"], 
-["chainsaw man","action","medium","series"] 
+["chainsaw man","Action","medium","series"] 
 ]
 
 animeNestedJikan = []
@@ -32,16 +32,17 @@ animeNestedJikan = []
 
 #! important query section
 # mood = input("What mood are u looking for?")
-# import easygui as eg
+import easygui as eg
 
-# question = "What type of anime would u like?"
-# title = "Select One (for now) "
-# listOfOptions = ["Action", "comedy", "sci-fi"]
+question = "What type of anime would u like?"
+title = "Select One (for now) "
+listOfOptions = ["Action", "comedy", "sci-fi"]
 
-# choice = eg.multchoicebox(question , title, listOfOptions)
+choice = eg.multchoicebox(question , title, listOfOptions)
 
-# print(choice)
-# choiceString = str(choice[0])
+print(choice)
+choiceString = str(choice[0])
+print(choiceString)
 
 # practiceUrlString = "test"
 # print("The original string : " + str(practiceUrlString))
@@ -119,14 +120,15 @@ while counter < lengthOfNames:
 # genreNamesOnlyArray = genreArrayData[0]['name']
 print("here are the names of the genre : ", genreNamesOnlyArray)
 
+# !removing what does not match from the list 
 
-# for x in genreNamesOnlyArray[:]: # removing what does not match from the list 
-#     # print(x)
-#     if x[] != choiceString:
-#         genreNamesOnlyArray.remove(x)
+for x in genreNamesOnlyArray[:]: 
+    print("here is the X variable : ",x)
+    if x != choiceString:
+        genreNamesOnlyArray.remove(x)
 
-# print("nested below")
-# print(genreNamesOnlyArray)   
+print("nested below")
+print(genreNamesOnlyArray[0])   
         
 
     
