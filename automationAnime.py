@@ -79,11 +79,22 @@ print("The concatenated string is : " + practiceUrlString)
 
 # html_text = response,params={'genres'}).text
 # print(html_text)
+#? add themes on top of genres at some point?
 
-
-genreData = response.json()['data'][0]['genres'] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
+genreData = response.json()['data'][0]['genres'][1] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
+#? add in multiple mal_id? like the animeNested version 
+# malIdMultiple = response.json()['data'][1]['genres'][0]['mal_id'] 
 # malId = response.json()['genres']
 print(genreData)
+# print(malIdMultiple)
+
+
+#? testing to check for specific data values such as the mal id  out of the data
+# newData = [obj for obj in genreData if 'mal_id' in obj[0]]
+testing = genreData['mal_id'] # the exact data from this id is here
+print("New Data below : ")
+print(testing)
+# print(newData)
 
 #! the mal_id for the genre should match up with the value/s the user input. 
 
