@@ -27,7 +27,6 @@ animeNested = [
 ["chainsaw man","Action","medium","series"] 
 ]
 
-animeNestedJikan = []
 
 
 #! important query section
@@ -82,18 +81,25 @@ print(choiceString)
 # html_text = response,params={'genres'}).text
 # print(html_text)
 #? add themes on top of genres at some point?
-OriginalAllSingleAnimeData = response.json()['data'][0]
-print("ALL THAT ONE ANIME DATA!! : ", OriginalAllSingleAnimeData)
 
 
-OriginalAnimeData = response.json()['data'][0]['title']
-print("ORIGINAL DATA NAMES HERE", OriginalAnimeData)
-OriginalGenreData = response.json()['data'][0]['genres']
-OriginalDataSetCombo = str(OriginalGenreData) + str(OriginalAnimeData)
-print("COOOOOOOOMBOOOOOOOO",OriginalDataSetCombo)
-# v2OriginalGenreData = response.json()['data'][0]['genres'][0]['name'] #! working version to grab data
-# print("LOOK HERE")
-# print(v2OriginalGenreData)
+#! making a large loop that does everything needed instead of splitting it up between multiple variables
+animeNestedJikan = response.json()['data']
+
+print(animeNestedJikan)
+
+# OriginalAllSingleAnimeData = response.json()['data'][0]
+# print("ALL THAT ONE ANIME DATA!! : ", OriginalAllSingleAnimeData)
+
+
+# OriginalAnimeData = response.json()['data'][0]['title']
+# print("ORIGINAL DATA NAMES HERE", OriginalAnimeData)
+# OriginalGenreData = response.json()['data'][0]['genres']
+# OriginalDataSetCombo = str(OriginalGenreData) + str(OriginalAnimeData)
+# print("COOOOOOOOMBOOOOOOOO",OriginalDataSetCombo)
+# # v2OriginalGenreData = response.json()['data'][0]['genres'][0]['name'] #! working version to grab data
+# # print("LOOK HERE")
+# # print(v2OriginalGenreData)
 # print("LOOK HERE")
 
 #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
