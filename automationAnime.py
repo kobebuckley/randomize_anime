@@ -82,20 +82,35 @@ print("The concatenated string is : " + practiceUrlString)
 #? add themes on top of genres at some point?
 OriginalGenreData = response.json()['data'][0]['genres']
 
-genreData = response.json()['data'][0]['genres'][1] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
-#? add in multiple mal_id? like the animeNested version 
-# malIdMultiple = response.json()['data'][1]['genres'][0]['mal_id'] 
-# malId = response.json()['genres']
-print(genreData)
-# print(malIdMultiple)
+# genreData = response.json()['data'][0]['genres'][1] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
+# #? add in multiple mal_id? like the animeNested version 
+# # malIdMultiple = response.json()['data'][1]['genres'][0]['mal_id'] 
+# # malId = response.json()['genres']
+# print(genreData)
+# # print(malIdMultiple)
 
-lengthOfGenre = len(OriginalGenreData)
-print("There are : ")
-print(lengthOfGenre)
-print(" genres in this anime!")
-# #! looping to get all the mal_ids
+# lengthOfGenre = len(OriginalGenreData)
+# print("There are : ")
+# # print(lengthOfGenre)
+# print(" genres in this anime!")
 # for x in OriginalGenreData[:]: # looping to find the length and return that id  
-     
+lengthOfGenre = len(OriginalGenreData)
+print(lengthOfGenre)
+
+genreArrayData = []
+
+counter = 0
+
+while counter < lengthOfGenre:
+    genreArrayData.append(str(OriginalGenreData[counter]))
+    counter += 1
+    genreArrayData = genreArrayData[:counter]
+print("The different genres in this anime are:", genreArrayData)
+
+
+
+
+    
 # #     if x[1] != choice[0]:
 # #         animeNested.remove(x)
 
@@ -103,11 +118,11 @@ print(" genres in this anime!")
 
 
 #? testing to check for specific data values such as the mal id  out of the data
-# newData = [obj for obj in genreData if 'mal_id' in obj[0]]
-testing = genreData['mal_id'] # the exact data from this id is here
-print("New Data below : ")
-print(testing)
-# print(newData)
+# # newData = [obj for obj in genreData if 'mal_id' in obj[0]]
+# testing = genreData['mal_id'] # the exact data from this id is here
+# print("New Data below : ")
+# print(testing)
+# # print(newData)
 
 
 #! the mal_id for the genre should match up with the value/s the user input. 
