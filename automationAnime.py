@@ -81,9 +81,11 @@ print("The concatenated string is : " + practiceUrlString)
 # print(html_text)
 
 
-malId = response.json()['data'][0]['genres'] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data
+genreData = response.json()['data'][0]['genres'] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
 # malId = response.json()['genres']
-print(malId)
+print(genreData)
+
+#! the mal_id for the genre should match up with the value/s the user input. 
 
 
 
