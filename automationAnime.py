@@ -7,15 +7,16 @@ import requests
 
 
 #! the url query (?) should change depending on the checbox inputs of the user. 
+#! the anime page also has multiple pages, so that needs to be accounted for when it comes down to all the data (likely chaning the Pagination will be the key?)
 
 #! Then it should return the main info (TBA - name, genre, length(depending on certain integers), series vs movie, etc., )
 
 response= requests.get('https://api.jikan.moe/v4/anime') # getAnimeSearch on Jikan is the most likely relevant part to continue this project 
 response.status_code
 
+#! ?genres=1  -> possible query to add to the above url ?genres=choice[]???
 
-
-
+#! genre - name
 
 
 
@@ -80,7 +81,7 @@ print("The concatenated string is : " + practiceUrlString)
 # print(html_text)
 
 
-malId = response.json()['data'][0]['mal_id']
+malId = response.json()['data'][0]['genres'] #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data
 # malId = response.json()['genres']
 print(malId)
 
