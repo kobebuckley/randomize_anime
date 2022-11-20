@@ -82,7 +82,15 @@ print(choiceString)
 # html_text = response,params={'genres'}).text
 # print(html_text)
 #? add themes on top of genres at some point?
+OriginalAllSingleAnimeData = response.json()['data'][0]
+print("ALL THAT ONE ANIME DATA!! : ", OriginalAllSingleAnimeData)
+
+
+OriginalAnimeData = response.json()['data'][0]['title']
+print("ORIGINAL DATA NAMES HERE", OriginalAnimeData)
 OriginalGenreData = response.json()['data'][0]['genres']
+OriginalDataSetCombo = str(OriginalGenreData) + str(OriginalAnimeData)
+print("COOOOOOOOMBOOOOOOOO",OriginalDataSetCombo)
 # v2OriginalGenreData = response.json()['data'][0]['genres'][0]['name'] #! working version to grab data
 # print("LOOK HERE")
 # print(v2OriginalGenreData)
@@ -133,23 +141,30 @@ print(genreNamesOnlyArray[0])
 
 
 #! add the original data back and return whatever data is relevant (for now just return the name of the animes that meet the req, and later can add more stuff and randomize etc., )
+
+#! looping the name variables of the anime 
+
+# genreNamesOnlyArray = []
+# lengthOfNames = len(genreArrayData)
+# print("HERE IS THE LENGTH : ",lengthOfNames)
+# counter = 0
+
+# while counter < lengthOfNames:
+#     genreNamesOnlyArray.append(genreArrayData[counter]['name'])
+#     counter +=1
+#     genreNamesOnlyArray = genreNamesOnlyArray[:counter] = []
+
     
-# #     if x[1] != choice[0
+#! simple method - might have been the easiest way from the start???
 
-#? testing to check for specific data values such as the mal id  out of the data
-# # newData = [obj for obj in genreData if 'mal_id' in obj[0]]
-# testing = genreData['mal_id'] # the exact data from this id is here
-# print("New Data below : ")
-# print(testing)
-# # print(newData)
-
-
-#! the mal_id for the genre should match up with the value/s the user input. 
-
-
-
-
-
+#   my_str = "Hello from AskPython"
+ 
+# target = "AskPython"
+ 
+if (genreNamesOnlyArray.__contains__(choiceString)):
+    print("String contains target!")
+else:
+    print("String does not contain target")
 
 
 
