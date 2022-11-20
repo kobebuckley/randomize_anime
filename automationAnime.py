@@ -131,6 +131,8 @@ print("nested below")
 print(genreNamesOnlyArray[0])   
         
 
+
+#! add the original data back and return whatever data is relevant (for now just return the name of the animes that meet the req, and later can add more stuff and randomize etc., )
     
 # #     if x[1] != choice[0
 
