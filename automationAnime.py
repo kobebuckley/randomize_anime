@@ -21,46 +21,46 @@ response.status_code
 
 
         
-animeNested = [
-["naruto","comedy","long","series"], 
-["jujutsu kaisen","action","short","movie"], 
-["chainsaw man","Action","medium","series"] 
-]
+# animeNested = [
+# ["naruto","comedy","long","series"], 
+# ["jujutsu kaisen","action","short","movie"], 
+# ["chainsaw man","Action","medium","series"] 
+# ]
 
 
 
-#! important query section
-# mood = input("What mood are u looking for?")
-import easygui as eg
-
-question = "What type of anime would u like?"
-title = "Select One (for now) "
-listOfOptions = ["Action", "comedy", "sci-fi"]
-
-choice = eg.multchoicebox(question , title, listOfOptions)
-
-print(choice)
-choiceString = str(choice[0])
-print(choiceString)
-
-# practiceUrlString = "test"
-# print("The original string : " + str(practiceUrlString))
-# print("The add string : " + str(choiceString))
-
-# practiceUrlString += choiceString
-# print("The concatenated string is : " + practiceUrlString)
-
-
-# #? Maybe adding the choice value to the Jikan url query? to then pull data from that category
-# #? Python | Add one string to another
 # #! important query section
+# # mood = input("What mood are u looking for?")
+# import easygui as eg
+
+# question = "What type of anime would u like?"
+# title = "Select One (for now) "
+# listOfOptions = ["Action", "comedy", "sci-fi"]
+
+# choice = eg.multchoicebox(question , title, listOfOptions)
+
+# print(choice)
+# choiceString = str(choice[0])
+# print(choiceString)
+
+# # practiceUrlString = "test"
+# # print("The original string : " + str(practiceUrlString))
+# # print("The add string : " + str(choiceString))
+
+# # practiceUrlString += choiceString
+# # print("The concatenated string is : " + practiceUrlString)
+
+
+# # #? Maybe adding the choice value to the Jikan url query? to then pull data from that category
+# # #? Python | Add one string to another
+# # #! important query section
 
 
 
 
 
 
-# print(choice[0])
+# # print(choice[0])
 
 # #? currently working for singular inputs, but multiple selections is not showing properly
 # #? the above problem might be solved by moving onto using the real data inputs
@@ -84,71 +84,77 @@ print(choiceString)
 
 
 #! making a large loop that does everything needed instead of splitting it up between multiple variables
+
+#? going to need to loop through to find each anime on the page before adding the rest of the steps (later will need to search through pages)
+
 animeNestedJikan = response.json()['data']
 
-print(animeNestedJikan)
+# print("MAIN DATA : ",animeNestedJikan)
+lengthOfAnimeAmmt = len(animeNestedJikan[1]) #36 is the length? 36 animes? no, this is reffering to the first data set of anime. Next would be a looping to find out how many
+#! the one above is the key to grabbing each anime set of data
 
-# OriginalAllSingleAnimeData = response.json()['data'][0]
-# print("ALL THAT ONE ANIME DATA!! : ", OriginalAllSingleAnimeData)
+#! making a loop to grab the above data but for each anime
 
 
-# OriginalAnimeData = response.json()['data'][0]['title']
-# print("ORIGINAL DATA NAMES HERE", OriginalAnimeData)
-# OriginalGenreData = response.json()['data'][0]['genres']
-# OriginalDataSetCombo = str(OriginalGenreData) + str(OriginalAnimeData)
-# print("COOOOOOOOMBOOOOOOOO",OriginalDataSetCombo)
-# # v2OriginalGenreData = response.json()['data'][0]['genres'][0]['name'] #! working version to grab data
+
+animeNestedJikanGroups = []
+
+counter = 0
+
+# for x in animeNestedJikan[:]:
+animeNestedJikanGroups.append(animeNestedJikanGroups[:counter])
+counter += 1
+
+# print("Here is the group of all the animes on this page : ", animeNestedJikanGroups)
+
+
+
+# while counter < lengthOfGenre:
+#     genreArrayData.append(OriginalGenreData[counter])
+#     counter += 1
+#     genreArrayData = genreArrayData[:counter]
+# print("The different genres in this anime are: ", genreArrayData)
+
+
+print("HERE IS THE LENGTH : ",lengthOfAnimeAmmt)
+print("Here is what length is reffering to : ", animeNestedJikan[1])
+
+# for x in animeNestedJikan[:]:
+#    animeNestedJikanGroups
+    
+
+# # OriginalAllSingleAnimeData = response.json()['data'][0]
+# # print("ALL THAT ONE ANIME DATA!! : ", OriginalAllSingleAnimeData)
+
+
+# # OriginalAnimeData = response.json()['data'][0]['title']
+# # print("ORIGINAL DATA NAMES HERE", OriginalAnimeData)
+# # OriginalGenreData = response.json()['data'][0]['genres']
+# # OriginalDataSetCombo = str(OriginalGenreData) + str(OriginalAnimeData)
+# # print("COOOOOOOOMBOOOOOOOO",OriginalDataSetCombo)
+# # # v2OriginalGenreData = response.json()['data'][0]['genres'][0]['name'] #! working version to grab data
+# # # print("LOOK HERE")
+# # # print(v2OriginalGenreData)
 # # print("LOOK HERE")
-# # print(v2OriginalGenreData)
-# print("LOOK HERE")
 
-#! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
-# #? add in multiple mal_id? like the animeNested version 
-lengthOfGenre = len(OriginalGenreData)
-print(lengthOfGenre)
+# #! successfuly grabbed the specific genre data that will have to match up / contain same checkbox data. 
+# # #? add in multiple mal_id? like the animeNested version 
+# lengthOfGenre = len(OriginalGenreData)
+# print(lengthOfGenre)
 
-genreArrayData = []
+# genreArrayData = []
 
-counter = 0
+# counter = 0
 
-while counter < lengthOfGenre:
-    genreArrayData.append(OriginalGenreData[counter])
-    counter += 1
-    genreArrayData = genreArrayData[:counter]
-print("The different genres in this anime are: ", genreArrayData)
+# while counter < lengthOfGenre:
+#     genreArrayData.append(OriginalGenreData[counter])
+#     counter += 1
+#     genreArrayData = genreArrayData[:counter]
+# print("The different genres in this anime are: ", genreArrayData)
 
-#! removing genres / anime that does not align with what the user wants
+# #! removing genres / anime that does not align with what the user wants
 
-#! looping the name variables of the genres 
-
-genreNamesOnlyArray = []
-lengthOfNames = len(genreArrayData)
-print("HERE IS THE LENGTH : ",lengthOfNames)
-counter = 0
-
-while counter < lengthOfNames:
-    genreNamesOnlyArray.append(genreArrayData[counter]['name'])
-    counter +=1
-    genreNamesOnlyArray = genreNamesOnlyArray[:counter]
-
-# genreNamesOnlyArray = genreArrayData[0]['name']
-print("here are the names of the genre : ", genreNamesOnlyArray)
-
-# !removing what does not match from the list 
-
-for x in genreNamesOnlyArray[:]: 
-    print("here is the X variable : ",x)
-    if x != choiceString:
-        genreNamesOnlyArray.remove(x)
-
-print("nested below")
-print(genreNamesOnlyArray[0])   
-        
-
-
-#! add the original data back and return whatever data is relevant (for now just return the name of the animes that meet the req, and later can add more stuff and randomize etc., )
-
-#! looping the name variables of the anime 
+# #! looping the name variables of the genres 
 
 # genreNamesOnlyArray = []
 # lengthOfNames = len(genreArrayData)
@@ -158,19 +164,48 @@ print(genreNamesOnlyArray[0])
 # while counter < lengthOfNames:
 #     genreNamesOnlyArray.append(genreArrayData[counter]['name'])
 #     counter +=1
-#     genreNamesOnlyArray = genreNamesOnlyArray[:counter] = []
+#     genreNamesOnlyArray = genreNamesOnlyArray[:counter]
+
+# # genreNamesOnlyArray = genreArrayData[0]['name']
+# print("here are the names of the genre : ", genreNamesOnlyArray)
+
+# # !removing what does not match from the list 
+
+# for x in genreNamesOnlyArray[:]: 
+#     print("here is the X variable : ",x)
+#     if x != choiceString:
+#         genreNamesOnlyArray.remove(x)
+
+# print("nested below")
+# print(genreNamesOnlyArray[0])   
+        
+
+
+# #! add the original data back and return whatever data is relevant (for now just return the name of the animes that meet the req, and later can add more stuff and randomize etc., )
+
+# #! looping the name variables of the anime 
+
+# # genreNamesOnlyArray = []
+# # lengthOfNames = len(genreArrayData)
+# # print("HERE IS THE LENGTH : ",lengthOfNames)
+# # counter = 0
+
+# # while counter < lengthOfNames:
+# #     genreNamesOnlyArray.append(genreArrayData[counter]['name'])
+# #     counter +=1
+# #     genreNamesOnlyArray = genreNamesOnlyArray[:counter] = []
 
     
-#! simple method - might have been the easiest way from the start???
+# #! simple method - might have been the easiest way from the start???
 
-#   my_str = "Hello from AskPython"
+# #   my_str = "Hello from AskPython"
  
-# target = "AskPython"
+# # target = "AskPython"
  
-if (genreNamesOnlyArray.__contains__(choiceString)):
-    print("String contains target!")
-else:
-    print("String does not contain target")
+# if (genreNamesOnlyArray.__contains__(choiceString)):
+#     print("String contains target!")
+# else:
+#     print("String does not contain target")
 
 
 
