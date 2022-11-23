@@ -30,25 +30,25 @@ response.status_code
 
 
 # #! important query section
-# # mood = input("What mood are u looking for?")
-# import easygui as eg
+# mood = input("What mood are u looking for?")
+import easygui as eg
 
-# question = "What type of anime would u like?"
-# title = "Select One (for now) "
-# listOfOptions = ["Action", "comedy", "sci-fi"]
+question = "What type of anime would u like?"
+title = "Select One (for now) "
+listOfOptions = ["Action", "comedy", "sci-fi"]
 
-# choice = eg.multchoicebox(question , title, listOfOptions)
+choice = eg.multchoicebox(question , title, listOfOptions)
 
-# print(choice)
-# choiceString = str(choice[0])
-# print(choiceString)
+print(choice)
+choiceString = str(choice[0])
+print(choiceString)
 
-# # practiceUrlString = "test"
-# # print("The original string : " + str(practiceUrlString))
-# # print("The add string : " + str(choiceString))
+# practiceUrlString = "test"
+# print("The original string : " + str(practiceUrlString))
+# print("The add string : " + str(choiceString))
 
-# # practiceUrlString += choiceString
-# # print("The concatenated string is : " + practiceUrlString)
+# practiceUrlString += choiceString
+# print("The concatenated string is : " + practiceUrlString)
 
 
 # # #? Maybe adding the choice value to the Jikan url query? to then pull data from that category
@@ -106,6 +106,16 @@ while len(animeNestedJikanGroups) < lengthOfAnimeAmmt:
     animeNestedJikanGroups.append(animeNestedJikan[:counter])
     counter += 1
     animeNestedJikanGroups = animeNestedJikan[:counter]
+    animeNestedSingular = animeNestedJikanGroups[:counter][0]
+    animeNestedSingularOfGenres = animeNestedSingular['genres'][0]
+    print(animeNestedSingularOfGenres['name'])
+    # print(animeNestedSingular['genres'])
+    # print("HERE IS THE SINGULAR GENRE : ", animeNestedSingular['genres'][1]['name'])
+    # print(animeNestedJikanGroups[:counter]['genres'])
+    # if (animeNestedJikanGroups[:counter].__contains__(choiceString)):
+    #     print("String contains target!")
+    # else:
+    #     print("String does not contain target")
 
 # print("Here is the group of all the animes on this page : ", animeNestedJikanGroups)
 
@@ -120,7 +130,44 @@ while len(animeNestedJikanGroups) < lengthOfAnimeAmmt:
 
 # print("HERE IS THE LENGTH : ",lengthOfAnimeAmmt)
 # print("Here is what length is reffering to : ", animeNestedJikan)
-print("HERE IS WHAT THE - animeNestedJikanGroups is referring to", animeNestedJikanGroups)
+print("HERE IS WHAT THE - animeNestedJikanGroups is referring to", animeNestedJikanGroups[1]['genres'][0]['name'])
+
+
+#? will need to make the string all undercase at some point
+if animeNestedJikanGroups[1]['genres'][0]['name'].__contains__(choiceString):
+
+#? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
+
+    print("String contains target!")
+else:
+    print("String does not contain target")
+
+
+#! Now we need to sift through the JikanGroups for each anime to then compare it against the user inputs 
+counter = 0
+lengthOfAnimeJikanGroupAmmt = len(animeNestedJikanGroups)
+# animeNestedJikanGroupsSingledOut = animeNestedJikanGroups[:counter]["mal_id"]
+
+
+# while counter < lengthOfAnimeJikanGroupAmmt:
+#     animes.append(OriginalGenreData[counter])
+#     counter += 1
+#     genreArrayData = genreArrayData[:counter]
+# print("The different genres in this anime are: ", genreArrayData)
+
+
+# print("HERE IS THE LENGTH : ",lengthOfAnimeAmmt)
+# print("Here is what length is reffering to : ", animeNestedJikan)
+
+
+
+
+
+
+
+
+
+
 # for x in animeNestedJikan[:]:
 #    animeNestedJikanGroups
     
@@ -204,7 +251,7 @@ print("HERE IS WHAT THE - animeNestedJikanGroups is referring to", animeNestedJi
  
 # # target = "AskPython"
  
-# if (genreNamesOnlyArray.__contains__(choiceString)):
+# if (animeNestedJikanGroups[:counter].__contains__(choiceString)):
 #     print("String contains target!")
 # else:
 #     print("String does not contain target")
