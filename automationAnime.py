@@ -90,7 +90,7 @@ response.status_code
 animeNestedJikan = response.json()['data']
 
 # print("MAIN DATA : ",animeNestedJikan)
-lengthOfAnimeAmmt = len(animeNestedJikan[1]) #36 is the length? 36 animes? no, this is reffering to the first data set of anime. Next would be a looping to find out how many
+lengthOfAnimeAmmt = len(animeNestedJikan) #36 is the length? 36 animes? no, this is reffering to the first data set of anime. Next would be a looping to find out how many
 #! the one above is the key to grabbing each anime set of data
 
 #! making a loop to grab the above data but for each anime
@@ -102,8 +102,10 @@ animeNestedJikanGroups = []
 counter = 0
 
 # for x in animeNestedJikan[:]:
-animeNestedJikanGroups.append(animeNestedJikanGroups[:counter])
-counter += 1
+while len(animeNestedJikanGroups) < lengthOfAnimeAmmt:
+    animeNestedJikanGroups.append(animeNestedJikan[:counter])
+    counter += 1
+    animeNestedJikanGroups = animeNestedJikan[:counter]
 
 # print("Here is the group of all the animes on this page : ", animeNestedJikanGroups)
 
@@ -116,9 +118,9 @@ counter += 1
 # print("The different genres in this anime are: ", genreArrayData)
 
 
-print("HERE IS THE LENGTH : ",lengthOfAnimeAmmt)
-print("Here is what length is reffering to : ", animeNestedJikan[1])
-
+# print("HERE IS THE LENGTH : ",lengthOfAnimeAmmt)
+# print("Here is what length is reffering to : ", animeNestedJikan)
+print("HERE IS WHAT THE - animeNestedJikanGroups is referring to", animeNestedJikanGroups)
 # for x in animeNestedJikan[:]:
 #    animeNestedJikanGroups
     
