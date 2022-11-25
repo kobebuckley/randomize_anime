@@ -109,37 +109,51 @@ currentSelection = []
 # print(animeNestedJikan[0]['genres'][genreCounter]['name'])
 
 genreCounter = 0
-
+finalSelection = []
 
 # for x in animeNestedJikan[:]:
-# while counter < lengthOfAnimeAmmt:
+while counter < lengthOfAnimeAmmt:
 #     #! new anime checked each loop 
 #     print("here is each anime : ",animeNestedJikan[counter])
 #     #! checking the genres
-print("THE GENRE/S IT CONTAINS is/are HERE---------------------------------------------",animeNestedJikan[counter]['genres'])
+    # print("THE GENRE/S IT CONTAINS is/are HERE---------------------------------------------",animeNestedJikan[counter]['genres'])
       #! figuring out the length of how many genres are in this set 
-genreLength = len(animeNestedJikan[counter]['genres'])
-print("amount of genres are : ", genreLength)
-while genreCounter < genreLength:
+    genreLength = len(animeNestedJikan[counter]['genres'])
+    # print("amount of genres are : ", genreLength)
+    while genreCounter < genreLength:
     # print("each individual here : ",animeNestedJikan[counter]['genres'][genreCounter]['name'])
     #! place to add in the genre checker
     
     #? will need to make the string all undercase at some point
-    if animeNestedJikan[counter]['genres'][genreCounter]['name'].lower().__contains__(choiceString.lower()):
+        if animeNestedJikan[counter]['genres'][genreCounter]['name'].lower().__contains__(choiceString.lower()):
 
 # #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
 
-        print("String contains target!")
-    else:
-        print("String does not contain target")
+#! if at least one works, then add to a new array called "currentSelection", otherwise it wont be added. So we need to add a "break" so it won't keep adding more
+            print("String contains target!")
+            print(animeNestedJikan[counter])
+            # counter += 1
+            # currentSelection.append(animeNestedJikan[counter])
+            # finalSelection.append(currentSelection)
+            
+            # print("Anime that meets at least one of the requirements : ",currentSelection)
+            
+        
+        else:
+            print("String does not contain target")
+            genreCounter += 1 
+    counter += 1
+    # break
 
-
-    
-    genreCounter += 1 
+    # print(currentSelection)
+    # print("working after the break? : ", len(currentSelection) )
     #! end of loop to find the genre names
+    # counter += 1
     
-    
-#     counter += 1
+
+
+# print("final selection is : ", len(finalSelection))
+
 #     #! end of loop 
 
     # currentSelection = animeNestedJikan[:counter]
