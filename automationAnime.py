@@ -96,21 +96,24 @@ lengthOfAnimeAmmt = len(animeNestedJikan) #36 is the length? 36 animes? no, this
 #! making a loop to grab the above data but for each anime
 
 
+print(animeNestedJikan)
 
-animeNestedJikanGroups = []
+# animeNestedJikanGroups = []
 
 counter = 0
+#! looping through each anime group, 0 1 2 3 etc., then checking if genres match with user input, then adding it to a new array if it does and moving on to next, otherwise moving on to next 
+
 
 # for x in animeNestedJikan[:]:
-while len(animeNestedJikanGroups) < lengthOfAnimeAmmt:
-    animeNestedJikanGroups.append(animeNestedJikan[:counter])
+while lengthOfAnimeAmmt < animeNestedJikan:
+#     # animeNestedJikanGroups.append(animeNestedJikan[:counter])
     counter += 1
-    animeNestedJikanGroups = animeNestedJikan[:counter]
-    animeNestedSingular = animeNestedJikanGroups[:counter][0]
-    animeNestedSingularOfGenres = animeNestedSingular['genres'][0]
-    print(animeNestedSingularOfGenres['name'])
-    # print(animeNestedSingular['genres'])
-    # print("HERE IS THE SINGULAR GENRE : ", animeNestedSingular['genres'][1]['name'])
+#     # animeNestedJikanGroups = animeNestedJikan[:counter]
+#     # print(animeNestedJikanGroups)
+    
+    # print("HERE IS THE GENRE", animeNestedJikanGroups['genres'])
+    # animeNestedSingular = animeNestedJikanGroups[:counter].append(['genres'])
+    # print("HERE IS THE SINGULAR GENRE :",animeNestedSingular )
     # print(animeNestedJikanGroups[:counter]['genres'])
     # if (animeNestedJikanGroups[:counter].__contains__(choiceString)):
     #     print("String contains target!")
