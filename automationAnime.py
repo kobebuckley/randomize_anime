@@ -121,8 +121,22 @@ print("THE GENRE/S IT CONTAINS is/are HERE--------------------------------------
 genreLength = len(animeNestedJikan[counter]['genres'])
 print("amount of genres are : ", genreLength)
 while genreCounter < genreLength:
-    print("each individual here : ",animeNestedJikan[counter]['genres'][genreCounter]['name'])
+    # print("each individual here : ",animeNestedJikan[counter]['genres'][genreCounter]['name'])
+    #! place to add in the genre checker
+    
+    #? will need to make the string all undercase at some point
+    if animeNestedJikan[counter]['genres'][genreCounter]['name'].__contains__(choiceString):
+
+# #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
+
+        print("String contains target!")
+    else:
+        print("String does not contain target")
+
+
+    
     genreCounter += 1 
+    #! end of loop to find the genre names
     
     
 #     counter += 1
