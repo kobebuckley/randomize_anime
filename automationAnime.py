@@ -132,6 +132,10 @@ while counter < lengthOfAnimeAmmt:
 #! if at least one works, then add to a new array called "currentSelection", otherwise it wont be added. So we need to add a "break" so it won't keep adding more
             print("String contains target!")
             print(animeNestedJikan[counter])
+            break 
+        #! it only breaks the loop inside of itseld, not all of them, should break because it meets the requirements
+
+
             # counter += 1
             # currentSelection.append(animeNestedJikan[counter])
             # finalSelection.append(currentSelection)
@@ -143,7 +147,7 @@ while counter < lengthOfAnimeAmmt:
             print("String does not contain target")
             genreCounter += 1 
     counter += 1
-    # break
+    break 
 
     # print(currentSelection)
     # print("working after the break? : ", len(currentSelection) )
