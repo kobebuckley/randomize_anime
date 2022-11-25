@@ -120,6 +120,9 @@ print("THE GENRE/S IT CONTAINS is/are HERE--------------------------------------
       #! figuring out the length of how many genres are in this set 
 genreLength = len(animeNestedJikan[counter]['genres'])
 print("amount of genres are : ", genreLength)
+while genreCounter < genreLength:
+    print("each individual here : ",animeNestedJikan[counter]['genres'][genreCounter]['name'])
+    genreCounter += 1 
     
     
 #     counter += 1
