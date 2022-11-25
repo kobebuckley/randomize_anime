@@ -96,18 +96,32 @@ lengthOfAnimeAmmt = len(animeNestedJikan) #36 is the length? 36 animes? no, this
 #! making a loop to grab the above data but for each anime
 
 
-print(animeNestedJikan)
+# print(animeNestedJikan)
 
 # animeNestedJikanGroups = []
 
 counter = 0
 #! looping through each anime group, 0 1 2 3 etc., then checking if genres match with user input, then adding it to a new array if it does and moving on to next, otherwise moving on to next 
 
+currentSelection = []
+
+# print(lengthOfAnimeAmmt)
+# print(animeNestedJikan[24])
+
 
 # for x in animeNestedJikan[:]:
-while lengthOfAnimeAmmt < animeNestedJikan:
-#     # animeNestedJikanGroups.append(animeNestedJikan[:counter])
+while counter < lengthOfAnimeAmmt:
+    #! new variable created each loop 
+    print("here is each anime : ",animeNestedJikan[counter])
+    
+    
+    
+    
     counter += 1
+    # currentSelection = animeNestedJikan[:counter]
+    # print("here is the current selection : ",currentSelection)
+#     # animeNestedJikanGroups.append(animeNestedJikan[:counter])
+    # counter += 1
 #     # animeNestedJikanGroups = animeNestedJikan[:counter]
 #     # print(animeNestedJikanGroups)
     
