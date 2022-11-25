@@ -39,9 +39,9 @@ listOfOptions = ["Action", "comedy", "sci-fi"]
 
 choice = eg.multchoicebox(question , title, listOfOptions)
 
-print(choice)
+print("choice selected : ",choice)
 choiceString = str(choice[0])
-print(choiceString)
+print("choice string : ",choiceString)
 
 # practiceUrlString = "test"
 # print("The original string : " + str(practiceUrlString))
@@ -106,18 +106,25 @@ counter = 0
 currentSelection = []
 
 # print(lengthOfAnimeAmmt)
-# print(animeNestedJikan[24])
+# print(animeNestedJikan[0]['genres'][genreCounter]['name'])
+
+genreCounter = 0
 
 
 # for x in animeNestedJikan[:]:
-while counter < lengthOfAnimeAmmt:
-    #! new variable created each loop 
-    print("here is each anime : ",animeNestedJikan[counter])
+# while counter < lengthOfAnimeAmmt:
+#     #! new anime checked each loop 
+#     print("here is each anime : ",animeNestedJikan[counter])
+#     #! checking the genres
+print("THE GENRE/S IT CONTAINS is/are HERE---------------------------------------------",animeNestedJikan[counter]['genres'])
+      #! figuring out the length of how many genres are in this set 
+genreLength = len(animeNestedJikan[counter]['genres'])
+print("amount of genres are : ", genreLength)
     
     
-    
-    
-    counter += 1
+#     counter += 1
+#     #! end of loop 
+
     # currentSelection = animeNestedJikan[:counter]
     # print("here is the current selection : ",currentSelection)
 #     # animeNestedJikanGroups.append(animeNestedJikan[:counter])
@@ -147,22 +154,49 @@ while counter < lengthOfAnimeAmmt:
 
 # print("HERE IS THE LENGTH : ",lengthOfAnimeAmmt)
 # print("Here is what length is reffering to : ", animeNestedJikan)
-print("HERE IS WHAT THE - animeNestedJikanGroups is referring to", animeNestedJikanGroups[1]['genres'][0]['name'])
+# print("HERE IS WHAT THE - animeNestedJikanGroups is referring to", animeNestedJikanGroups[1]['genres'][0]['name'])
 
 
-#? will need to make the string all undercase at some point
-if animeNestedJikanGroups[1]['genres'][0]['name'].__contains__(choiceString):
-
-#? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
-
-    print("String contains target!")
-else:
-    print("String does not contain target")
 
 
-#! Now we need to sift through the JikanGroups for each anime to then compare it against the user inputs 
-counter = 0
-lengthOfAnimeJikanGroupAmmt = len(animeNestedJikanGroups)
+
+
+
+
+
+
+
+
+
+
+
+#!----------------------------------------
+
+
+# #? will need to make the string all undercase at some point
+# # if animeNestedJikanGroups[1]['genres'][0]['name'].__contains__(choiceString):
+
+# #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
+
+#     print("String contains target!")
+# else:
+#     print("String does not contain target")
+
+
+# #! Now we need to sift through the JikanGroups for each anime to then compare it against the user inputs 
+# counter = 0
+# lengthOfAnimeJikanGroupAmmt = len(animeNestedJikanGroups)
+
+
+
+
+
+#!----------------------------------------
+
+
+
+
+
 # animeNestedJikanGroupsSingledOut = animeNestedJikanGroups[:counter]["mal_id"]
 
 
