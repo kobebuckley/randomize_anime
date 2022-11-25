@@ -125,7 +125,7 @@ while genreCounter < genreLength:
     #! place to add in the genre checker
     
     #? will need to make the string all undercase at some point
-    if animeNestedJikan[counter]['genres'][genreCounter]['name'].__contains__(choiceString):
+    if animeNestedJikan[counter]['genres'][genreCounter]['name'].lower().__contains__(choiceString.lower()):
 
 # #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
 
