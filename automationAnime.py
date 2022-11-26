@@ -109,17 +109,14 @@ lengthOfAnimeAmmt = len(animeNestedJikan) #36 is the length? 36 animes? no, this
 counter = 0
 #! looping through each anime group, 0 1 2 3 etc., then checking if genres match with user input, then adding it to a new array if it does and moving on to next, otherwise moving on to next 
 
-currentSelection = []
-
-# print(lengthOfAnimeAmmt)
-# print(animeNestedJikan[0]['genres'][genreCounter]['name'])
-
 genreCounter = 0
+
+currentSelection = []
 finalSelection = []
 
 # for x in animeNestedJikan[:]:
 while counter < lengthOfAnimeAmmt:
-    print("Counter is : ", counter)
+    # print("Counter is : ", counter)
 #     #! new anime checked each loop 
 #     print("here is each anime : ",animeNestedJikan[counter])
 #     #! checking the genres
@@ -137,27 +134,31 @@ while counter < lengthOfAnimeAmmt:
 # #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
 
 #! if at least one works, then add to a new array called "currentSelection", otherwise it wont be added. So we need to add a "break" so it won't keep adding more
-            print("String contains target!")
+            # print("String contains target!")
             # print(animeNestedJikan[counter])
+            currentSelection.append(animeNestedJikan[counter])
             break 
         #! it only breaks the loop inside of itseld, not all of them, should break because it meets the requirements
-
-
-            # counter += 1
-            currentSelection.append(animeNestedJikan[counter])
-            finalSelection.append(currentSelection)
+            # print("the data: ", animeNestedJikan[counter])
+            # currentSelection = (animeNestedJikan[counter])
+            # finalSelection.append(currentSelection)
             
             # print("Anime that meets at least one of the requirements : ",currentSelection)
             
         
         else:
-            print("String does not contain target")
-            print("Genres it does contain : ",animeNestedJikan[counter]['genres'] )
+            # print("String does not contain target", counter)
+            # print("NOW REMOVING FROM LIST : ",animeNestedJikan.remove(animeNestedJikan[counter]))
+            # print("hmm : ", animeNestedJikan[counter])
+            # animeNestedJikan[counter].clear()
+            
+            # print("Genres it does contain : ",animeNestedJikan[counter]['genres'] )
             break
             
     counter += 1
 
-    
+# print(len((finalSelection)))
+   
         # break 
 
     # print(currentSelection)
@@ -165,8 +166,10 @@ while counter < lengthOfAnimeAmmt:
     #! end of loop to find the genre names
     # counter += 1
     
-
-
+#! not sure what the point of genreCounter is for, seems to mess it up when I use it
+# print("final selection is : ", finalSelection)
+print("current selection has : ", len(currentSelection) ," animes inside of it (+ 1?)")
+print(currentSelection)
 # print("final selection is : ", len(finalSelection))
 
 #     #! end of loop 
