@@ -33,15 +33,21 @@ response.status_code
 # mood = input("What mood are u looking for?")
 import easygui as eg
 
+#! --------------------------
+
 question = "What type of anime would u like?"
 title = "Select One (for now) "
 listOfOptions = ["Action", "comedy", "sci-fi"]
 
 choice = eg.multchoicebox(question , title, listOfOptions)
 
-print("choice selected : ",choice)
+# print("choice selected : ",choice)
 choiceString = str(choice[0])
-print("choice string : ",choiceString)
+# print("choice string : ",choiceString)
+
+
+
+#! --------------------------
 
 # practiceUrlString = "test"
 # print("The original string : " + str(practiceUrlString))
@@ -113,6 +119,7 @@ finalSelection = []
 
 # for x in animeNestedJikan[:]:
 while counter < lengthOfAnimeAmmt:
+    print("Counter is : ", counter)
 #     #! new anime checked each loop 
 #     print("here is each anime : ",animeNestedJikan[counter])
 #     #! checking the genres
@@ -131,23 +138,27 @@ while counter < lengthOfAnimeAmmt:
 
 #! if at least one works, then add to a new array called "currentSelection", otherwise it wont be added. So we need to add a "break" so it won't keep adding more
             print("String contains target!")
-            print(animeNestedJikan[counter])
+            # print(animeNestedJikan[counter])
             break 
         #! it only breaks the loop inside of itseld, not all of them, should break because it meets the requirements
 
 
             # counter += 1
-            # currentSelection.append(animeNestedJikan[counter])
-            # finalSelection.append(currentSelection)
+            currentSelection.append(animeNestedJikan[counter])
+            finalSelection.append(currentSelection)
             
             # print("Anime that meets at least one of the requirements : ",currentSelection)
             
         
         else:
             print("String does not contain target")
-            genreCounter += 1 
+            print("Genres it does contain : ",animeNestedJikan[counter]['genres'] )
+            break
+            
     counter += 1
-    break 
+
+    
+        # break 
 
     # print(currentSelection)
     # print("working after the break? : ", len(currentSelection) )
