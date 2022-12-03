@@ -138,7 +138,7 @@ while counter < lengthOfAnimeAmmt:
             # print(animeNestedJikan[counter])
             currentSelection.append(animeNestedJikan[counter])
             break 
-        #! it only breaks the loop inside of itseld, not all of them, should break because it meets the requirements
+        #! it only breaks the loop inside of itself, not all of them, should break because it meets the requirements
             # print("the data: ", animeNestedJikan[counter])
             # currentSelection = (animeNestedJikan[counter])
             # finalSelection.append(currentSelection)
