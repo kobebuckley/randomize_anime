@@ -153,8 +153,15 @@ while counter < lengthOfAnimeAmmt:
             # animeNestedJikan[counter].clear()
             
             # print("Genres it does contain : ",animeNestedJikan[counter]['genres'] )
+            print("genre counter is : " , genreCounter , "!!!!!!!!!!!!!!")
             break
-            
+        
+        
+        
+        
+        #! MAYBE USE PYTHON FILTER INSTEAD OF LOOPING? AND CHECK OUT THIS PAGE IF NEEDED - https://api.jikan.moe/v4/genres/anime
+        
+        
     counter += 1
 
 # print(len((finalSelection)))
