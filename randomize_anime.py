@@ -8,13 +8,13 @@ animeNested = [
 
 
 # mood = input("What mood are u looking for?")
-import easygui as eg
+# import easygui as eg
 
-question = "This is your question"
-title = "This is your window title"
-listOfOptions = ["action", "comedy", "option 3"]
+# question = "This is your question"
+# title = "This is your window title"
+# listOfOptions = ["action", "comedy", "option 3"]
 
-choice = eg.multchoicebox(question , title, listOfOptions)
+# choice = eg.multchoicebox(question , title, listOfOptions)
 
 print(choice)
 # print(choice[0])

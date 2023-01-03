@@ -41,57 +41,74 @@ listOfOptions = ["Action", "comedy", "sci-fi"]
 
 choice = eg.multchoicebox(question , title, listOfOptions)
 
-# print("choice selected : ",choice)
-choiceString = str(choice[0])
-# print("choice string : ",choiceString)
+print("choices are : ", choice)
 
+length_of_choices = len(choice)
+print("length of choices selected are : ", length_of_choices)
+dummy_genre = 'Action'
 
+#simpler loop that includes a Set
+animeNestedJikan = response.json()['data']
 
-#! --------------------------
+for individual_anime in animeNestedJikan:
+    print ("individual anime",individual_anime)
+    # if animeNestedJikan[individual_anime]['genres']
 
-# practiceUrlString = "test"
-# print("The original string : " + str(practiceUrlString))
-# print("The add string : " + str(choiceString))
+# # for x in animeNestedJikan[:]:
+# while counter < lengthOfAnimeAmmt:
+#     # print("Counter is : ", counter)
+# #     #! new anime checked each loop 
+# #     print("here is each anime : ",animeNestedJikan[counter])
+# #     #! checking the genres
+#     # print("THE GENRE/S IT CONTAINS is/are HERE---------------------------------------------",animeNestedJikan[counter]['genres'])
+#       #! figuring out the length of how many genres are in this set 
+#     genreLength = len(animeNestedJikan[counter]['genres'])
+#     # print("amount of genres are : ", genreLength)
+#     while genreCounter < genreLength:
+#     # print("each individual here : ",animeNestedJikan[counter]['genres'][genreCounter]['name'])
+#     #! place to add in the genre checker
+    
+#     #? will need to make the string all undercase at some point
+#         if animeNestedJikan[counter]['genres'][genreCounter]['name'].lower().__contains__(choiceString.lower()):
 
-# practiceUrlString += choiceString
-# print("The concatenated string is : " + practiceUrlString)
+# # #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
 
-
-# # #? Maybe adding the choice value to the Jikan url query? to then pull data from that category
-# # #? Python | Add one string to another
-# # #! important query section
-
-
-
-
-
-
-# # print(choice[0])
-
-# #? currently working for singular inputs, but multiple selections is not showing properly
-# #? the above problem might be solved by moving onto using the real data inputs
-
-# for x in animeNested[:]: # removing what does not match from the list 
-#     # print(x)
-#     if x[1] != choice[0]:
-#         animeNested.remove(x)
-
-# print("nested below")
-# print(animeNested)   
+# #! if at least one works, then add to a new array called "currentSelection", otherwise it wont be added. So we need to add a "break" so it won't keep adding more
+#             # print("String contains target!")
+#             # print(animeNestedJikan[counter])
+#             currentSelection.append(animeNestedJikan[counter])
+#             break 
+#         #! it only breaks the loop inside of itself, not all of them, should break because it meets the requirements
+#             # print("the data: ", animeNestedJikan[counter])
+#             # currentSelection = (animeNestedJikan[counter])
+#             # finalSelection.append(currentSelection)
+            
+#             # print("Anime that meets at least one of the requirements : ",currentSelection)
+            
+        
+#         else:
+#             # print("String does not contain target", counter)
+#             # print("NOW REMOVING FROM LIST : ",animeNestedJikan.remove(animeNestedJikan[counter]))
+#             # print("hmm : ", animeNestedJikan[counter])
+#             # animeNestedJikan[counter].clear()
+            
+#             # print("Genres it does contain : ",animeNestedJikan[counter]['genres'] )
+#             print("genre counter is : " , genreCounter , "!!!!!!!!!!!!!!")
+#             break
+        
+        
         
 
-# print(response.status_code)
-
-# print(response.json())
-
-# html_text = response,params={'genres'}).text
-# print(html_text)
-#? add themes on top of genres at some point?
 
 
-#! making a large loop that does everything needed instead of splitting it up between multiple variables
 
-#? going to need to loop through to find each anime on the page before adding the rest of the steps (later will need to search through pages)
+
+
+
+
+
+
+
 
 animeNestedJikan = response.json()['data']
 
@@ -177,6 +194,94 @@ while counter < lengthOfAnimeAmmt:
 # print("final selection is : ", finalSelection)
 print("current selection has : ", len(currentSelection) ," animes inside of it (+ 1?)")
 print(currentSelection)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# change below to anime genre looping
+for eachChoice in choice:
+    if dummy_genre in choice:
+        print("dummy text was found!")
+    else:
+        print("dummy text not found")
+
+
+
+# print("choice selected : ",choice)
+choiceString = str(choice[0])
+print("choice string : ",choiceString)
+
+
+
+#! --------------------------
+
+# practiceUrlString = "test"
+# print("The original string : " + str(practiceUrlString))
+# print("The add string : " + str(choiceString))
+
+# practiceUrlString += choiceString
+# print("The concatenated string is : " + practiceUrlString)
+
+
+# # #? Maybe adding the choice value to the Jikan url query? to then pull data from that category
+# # #? Python | Add one string to another
+# # #! important query section
+
+
+
+
+
+
+# # print(choice[0])
+
+# #? currently working for singular inputs, but multiple selections is not showing properly
+# #? the above problem might be solved by moving onto using the real data inputs
+
+# for x in animeNested[:]: # removing what does not match from the list 
+#     # print(x)
+#     if x[1] != choice[0]:
+#         animeNested.remove(x)
+
+# print("nested below")
+# print(animeNested)   
+        
+
+# print(response.status_code)
+
+# print(response.json())
+
+# html_text = response,params={'genres'}).text
+# print(html_text)
+#? add themes on top of genres at some point?
+
+
+#! making a large loop that does everything needed instead of splitting it up between multiple variables
+
+#? going to need to loop through to find each anime on the page before adding the rest of the steps (later will need to search through pages)
+
+
 # print("final selection is : ", len(finalSelection))
 
 #     #! end of loop 
