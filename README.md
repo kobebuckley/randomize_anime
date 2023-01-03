@@ -1,8 +1,8 @@
 # randomize_anime
 
-( Referencing Tina Huang Youtube Channel)
+( Referencing Tina Huang Youtube Channel Project Idea)
 
-No tutorial Project #1
+ Project #1 - Self Learning
 
     • Python
         ◦ Lists
@@ -26,11 +26,42 @@ No tutorial Project #1
         2. Use the input function (mood, runtime, series/movie)
 
         
-        Advanced Project: 
+        *(current) Advanced Project: 
         
-        1. Jikan
-        2. Pandas
-        3. from command line input to a website / UI interface
+        1. Jikan - pulling data from Jikan and putting it into the nested version  - *IN PROGRESS*
+        2. Pandas - using dataframes instead of nests - *NEXT UP*
+        3. from command line input to a website / UI interface - *COMPLETED* minimal version 
 
         
-        
+        High Level Project: (still thinking about overall ideas for this one ... )
+
+        Adding in Django + Node Js 
+        creating an app where people can join a room using a code, then choose anime based off of checkboxes, then can vote on which random anime selected is what they all want by casting votes. (Jikan APi)
+
+        (maybe a feature/checkbox for different levels, such as N5 japanese for learning etc.,)
+        group learn from an anime  ( Jisho and DeepL Apis')
+
+        other random api 
+
+        (trace.moe API)
+
+        ----------------------
+        Non APi 
+        https://www.reddit.com/r/LearnJapanese/comments/ccghhs/is_there_a_site_for_anime_transcripts_or_anime/?utm_source=amp&utm_medium=&utm_content=comments_view_all
+
+
+        to grab anime that has a script (will search websites that have scripts) and also have checboxes for episode, etc, 
+
+
+
+        -> found the anime eng + jp subs (Kitsunekko)
+        Jp -> https://kitsunekko.net/dirlist.php?dir=subtitles%2Fjapanese%2F
+        Eng -> https://kitsunekko.net/dirlist.php?dir=subtitles%2F
+
+        Can also add a link to grammar explanations (can be found easily throihg copy & pasting the grammar) -> through Control f or maybe a feature that does it for you?  (Itazuraneko.neocities.org)
+
+
+
+* figure out the rate limiter for APi's
+* later add a sign on feature to make accounts, track studying time, track who was in your group with u and how long, etc., maybe a forumn? something to include localition coding involvement / practice etc., 
+
