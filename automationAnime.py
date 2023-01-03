@@ -50,8 +50,25 @@ dummy_genre = 'Action'
 #simpler loop that includes a Set
 animeNestedJikan = response.json()['data']
 
-for individual_anime in animeNestedJikan:
-    print ("individual anime",individual_anime)
+counter = 1
+genreCounter = 0
+#if includes...
+print("test: ", animeNestedJikan[counter]['genres'][genreCounter]['name'])
+
+# for individual_anime in animeNestedJikan[0]['mal_id'][0]:
+#     print ("individual anime",individual_anime)
+    # for individual_genres in individual_anime:
+    #     print("genres : ", individual_genres)
+        # for genre_list in individual_genres:
+        #     print("genre list ",genre_list)
+            # for genre_name in genre_list:
+            #     print("name of genre is: ",genre_name)
+        # if dummy_genre in genre_list:
+        #     print('DUMMY TEXT HAS BEEN FOUND! ADD ME, THEN CONVERT TO A SET?')
+
+    #each anime has been grabbed, now needing to check the genre of each one at a time and ouput it to test, then check it against user input choice
+
+
     # if animeNestedJikan[individual_anime]['genres']
 
 # # for x in animeNestedJikan[:]:
