@@ -47,6 +47,116 @@ length_of_choices = len(choice)
 print("length of choices selected are : ", length_of_choices)
 dummy_genre = 'Action'
 
+
+# -------------------------------------------------------------------------------------------------------------------------
+animeNestedJikan = response.json()['data']
+
+# print("MAIN DATA : ",animeNestedJikan)
+lengthOfAnimeAmmt = len(animeNestedJikan
+#25 per page
+) #36 is the length? 36 animes? no, this is reffering to the first data set of anime. Next would be a looping to find out how many
+#! the one above is the key to grabbing each anime set of data
+print("The amount of animes available are: ", lengthOfAnimeAmmt)
+
+#! making a loop to grab the above data but for each anime
+
+
+# print(animeNestedJikan)
+
+# animeNestedJikanGroups = []
+
+#! looping through each anime group, 0 1 2 3 etc., then checking if genres match with user input, then adding it to a new array if it does and moving on to next, otherwise moving on to next 
+counter = 0
+
+genreCounter = 0
+
+currentSelection = []
+finalSelection = []
+
+# for x in animeNestedJikan[:]:
+#! need to find out why genre isn't properly working - 5:25 - 1/5
+
+
+while counter < lengthOfAnimeAmmt:
+    # print("counter is now:", counter)
+    # print("Counter is : ", counter)
+#     #! new anime checked each loop 
+#     print("here is each anime : ",animeNestedJikan[counter])
+#     #! checking the genres
+    # print("THE GENRE/S IT CONTAINS is/are HERE---------------------------------------------",animeNestedJikan[counter]['genres'])
+      #! figuring out the length of how many genres are in this set : not including "explicit genre types such as more in depth like space for example"
+    genreLength = len(animeNestedJikan[counter]['genres'])
+    # print("amount of genres are : ", genreLength)
+
+
+
+    while genreCounter < genreLength:
+#! seems to only grab one genre, needs all of the genres from the list - 1/5 5:53
+        genres_available = animeNestedJikan[counter]['genres']
+
+        # while counter < lengthOfAnimeAmmt:
+        print("amount of genres are : ", genreLength)
+        print("the genre names in this anime are: ", genres_available)
+        print("counter is now:", counter)
+        # genreCounter+=1
+
+    #! place to add in the genre checker
+    
+#     #? will need to make the string all undercase at some point
+#         if animeNestedJikan[counter]['genres'][genreCounter]['name'].lower() in (dummy_genre.lower()):
+
+# # #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
+
+# #! if at least one works, then add to a new array called "currentSelection", otherwise it wont be added. So we need to add a "break" so it won't keep adding more
+        
+#             print("Dummy Text FOUND : ", dummy_genre, "The anime genre is: ", animeNestedJikan[counter]['genres'][genreCounter]['name'].lower())
+#             counter += 1
+#             print("counter is : ",counter)
+            
+
+        
+#         else:
+           
+#             print("Dummy Text NOT-----FOUND : ", dummy_genre, "The anime genre is: ", animeNestedJikan[counter]['genres'][genreCounter]['name'].lower())
+#             genreCounter+= 1
+#             print("changing genre counter to:", genreCounter)
+#             print("counter is : ",counter)
+
+
+      
+        
+        
+        #! MAYBE USE PYTHON FILTER INSTEAD OF LOOPING? AND CHECK OUT THIS PAGE IF NEEDED - https://api.jikan.moe/v4/genres/anime
+        
+        
+
+# print(len((finalSelection)))
+   
+        # break 
+
+    # print(currentSelection)
+    # print("working after the break? : ", len(currentSelection) )
+    #! end of loop to find the genre names
+    # counter += 1
+    
+#! not sure what the point of genreCounter is for, seems to mess it up when I use it
+# print("final selection is : ", finalSelection)
+# print("current selection has : ", len(currentSelection) ," animes inside of it (+ 1?)")
+# print(currentSelection)
+
+
+
+
+#--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
 #simpler loop that includes a Set
 animeNestedJikan = response.json()['data']
 
@@ -127,92 +237,6 @@ print("test: ", animeNestedJikan[counter]['genres'][genreCounter]['name'])
 
 
 
-animeNestedJikan = response.json()['data']
-
-# print("MAIN DATA : ",animeNestedJikan)
-lengthOfAnimeAmmt = len(animeNestedJikan) #36 is the length? 36 animes? no, this is reffering to the first data set of anime. Next would be a looping to find out how many
-#! the one above is the key to grabbing each anime set of data
-
-#! making a loop to grab the above data but for each anime
-
-
-# print(animeNestedJikan)
-
-# animeNestedJikanGroups = []
-
-counter = 0
-#! looping through each anime group, 0 1 2 3 etc., then checking if genres match with user input, then adding it to a new array if it does and moving on to next, otherwise moving on to next 
-
-genreCounter = 0
-
-currentSelection = []
-finalSelection = []
-
-# for x in animeNestedJikan[:]:
-while counter < lengthOfAnimeAmmt:
-    # print("Counter is : ", counter)
-#     #! new anime checked each loop 
-#     print("here is each anime : ",animeNestedJikan[counter])
-#     #! checking the genres
-    # print("THE GENRE/S IT CONTAINS is/are HERE---------------------------------------------",animeNestedJikan[counter]['genres'])
-      #! figuring out the length of how many genres are in this set 
-    genreLength = len(animeNestedJikan[counter]['genres'])
-    # print("amount of genres are : ", genreLength)
-    while genreCounter < genreLength:
-    # print("each individual here : ",animeNestedJikan[counter]['genres'][genreCounter]['name'])
-    #! place to add in the genre checker
-    
-    #? will need to make the string all undercase at some point
-        if animeNestedJikan[counter]['genres'][genreCounter]['name'].lower().__contains__(choiceString.lower()):
-
-# #? will need to do this check for each single anime (so we need it to be included in the larger loop by somehow grabbing only a single piece of data for each anime throughout the loop)
-
-#! if at least one works, then add to a new array called "currentSelection", otherwise it wont be added. So we need to add a "break" so it won't keep adding more
-            # print("String contains target!")
-            # print(animeNestedJikan[counter])
-            currentSelection.append(animeNestedJikan[counter])
-            break 
-        #! it only breaks the loop inside of itself, not all of them, should break because it meets the requirements
-            # print("the data: ", animeNestedJikan[counter])
-            # currentSelection = (animeNestedJikan[counter])
-            # finalSelection.append(currentSelection)
-            
-            # print("Anime that meets at least one of the requirements : ",currentSelection)
-            
-        
-        else:
-            # print("String does not contain target", counter)
-            # print("NOW REMOVING FROM LIST : ",animeNestedJikan.remove(animeNestedJikan[counter]))
-            # print("hmm : ", animeNestedJikan[counter])
-            # animeNestedJikan[counter].clear()
-            
-            # print("Genres it does contain : ",animeNestedJikan[counter]['genres'] )
-            print("genre counter is : " , genreCounter , "!!!!!!!!!!!!!!")
-            break
-        
-        
-        
-        
-        #! MAYBE USE PYTHON FILTER INSTEAD OF LOOPING? AND CHECK OUT THIS PAGE IF NEEDED - https://api.jikan.moe/v4/genres/anime
-        
-        
-    counter += 1
-
-# print(len((finalSelection)))
-   
-        # break 
-
-    # print(currentSelection)
-    # print("working after the break? : ", len(currentSelection) )
-    #! end of loop to find the genre names
-    # counter += 1
-    
-#! not sure what the point of genreCounter is for, seems to mess it up when I use it
-# print("final selection is : ", finalSelection)
-print("current selection has : ", len(currentSelection) ," animes inside of it (+ 1?)")
-print(currentSelection)
-
-
 
 
 
@@ -247,8 +271,8 @@ for eachChoice in choice:
 
 
 # print("choice selected : ",choice)
-choiceString = str(choice[0])
-print("choice string : ",choiceString)
+# choiceString = str(choice[0])
+# print("choice string : ",choiceString)
 
 
 
