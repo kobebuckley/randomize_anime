@@ -78,7 +78,8 @@ finalSelection = []
 
 
 while counter < lengthOfAnimeAmmt:
-    # print("counter is now:", counter)
+    # genreCounter = 0
+    print("counter is now:", counter)
     # print("Counter is : ", counter)
 #     #! new anime checked each loop 
 #     print("here is each anime : ",animeNestedJikan[counter])
@@ -86,19 +87,37 @@ while counter < lengthOfAnimeAmmt:
     # print("THE GENRE/S IT CONTAINS is/are HERE---------------------------------------------",animeNestedJikan[counter]['genres'])
       #! figuring out the length of how many genres are in this set : not including "explicit genre types such as more in depth like space for example"
     genreLength = len(animeNestedJikan[counter]['genres'])
+    print("amount of genres are : ", genreLength)
+
+    genres_available = animeNestedJikan[counter]['genres']
+
     # print("amount of genres are : ", genreLength)
 
-
-
+    print("genre counter is : ",genreCounter)
     while genreCounter < genreLength:
+        # genres_available = animeNestedJikan[counter]['genres']
 #! seems to only grab one genre, needs all of the genres from the list - 1/5 5:53
-        genres_available = animeNestedJikan[counter]['genres']
+        # genres_available = animeNestedJikan[counter]['genres'][genreCounter]
+        print(genreCounter,"counter genre here: ",genres_available[genreCounter])
+        genreCounter+=1
 
-        # while counter < lengthOfAnimeAmmt:
-        print("amount of genres are : ", genreLength)
-        print("the genre names in this anime are: ", genres_available)
-        print("counter is now:", counter)
-        # genreCounter+=1
+    else:
+        print("done with the genres in this anime, moving onto next anime")
+        genreCounter = 0
+        counter+=1
+        
+
+        #! The loop is working! Need to add in the checker for the dummy text to see if the anime contains the text in at least on eof the genres, once it does, the loop can stop (or not) and put the anime into a set
+
+        # # while counter < lengthOfAnimeAmmt:
+        # print("amount of genres are : ", genreLength)
+        # print("the genre names in this anime are: ", genres_available)
+        # print("counter is now:", counter)
+        # while genreCounter < len(genres_available):
+        #     print("here is genre counter",genreCounter)
+        #     name_of_genre=genres_available[genreCounter]['name']
+        #     print('Here is the name of the specific genre name: ', name_of_genre)
+        #     genreCounter+=1
 
     #! place to add in the genre checker
     
@@ -157,13 +176,13 @@ while counter < lengthOfAnimeAmmt:
 
 
 
-#simpler loop that includes a Set
-animeNestedJikan = response.json()['data']
+# #simpler loop that includes a Set
+# animeNestedJikan = response.json()['data']
 
-counter = 1
-genreCounter = 0
-#if includes...
-print("test: ", animeNestedJikan[counter]['genres'][genreCounter]['name'])
+# counter = 1
+# genreCounter = 0
+# #if includes...
+# print("test: ", animeNestedJikan[counter]['genres'][genreCounter]['name'])
 
 # for individual_anime in animeNestedJikan[0]['mal_id'][0]:
 #     print ("individual anime",individual_anime)
