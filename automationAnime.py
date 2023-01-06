@@ -37,7 +37,7 @@ import easygui as eg
 
 question = "What type of anime would u like?"
 title = "Select One (for now) "
-listOfOptions = ["Action", "comedy", "sci-fi"]
+listOfOptions = ["action", "comedy", "sci-fi"]
 
 choice = eg.multchoicebox(question , title, listOfOptions)
 
@@ -46,6 +46,7 @@ print("choices are : ", choice)
 length_of_choices = len(choice)
 print("length of choices selected are : ", length_of_choices)
 dummy_genre = 'action' #make sure all text is lowered by default when taken from user
+# dummy_genre_list = ['action', 'mystery'] #make sure all text is lowered by default when taken from user
 
 
 # -------------------------------------------------------------------------------------------------------------------------
@@ -124,12 +125,19 @@ while counter < lengthOfAnimeAmmt:
 #     else:
 #         print("dummy text not found")
 
-# # change below to anime genre looping
+# # # change below to anime genre looping
+# # for eachChoice in choice:
+# #     if dummy_genre in choice:
+# #         print("dummy text was found!")
+# #     else:
+#         print("dummy text not found")
+
+# change below to anime genre looping
 # for eachChoice in choice:
-#     if dummy_genre in choice:
-#         print("dummy text was found!")
+#     if dummy_genre_list in choice:
+#         print("dummy text list was found!")
 #     else:
-        print("dummy text not found")
+#         print("dummy text list not found")
 
         #! The loop is working! Need to add in the checker for the dummy text to see if the anime contains the text in at least on eof the genres, once it does, the loop can stop (or not) and put the anime into a set
 
