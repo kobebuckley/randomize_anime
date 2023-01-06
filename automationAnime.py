@@ -45,7 +45,7 @@ print("choices are : ", choice)
 
 length_of_choices = len(choice)
 print("length of choices selected are : ", length_of_choices)
-dummy_genre = 'Action'
+dummy_genre = 'action' #make sure all text is lowered by default when taken from user
 
 
 # -------------------------------------------------------------------------------------------------------------------------
@@ -99,6 +99,10 @@ while counter < lengthOfAnimeAmmt:
 #! seems to only grab one genre, needs all of the genres from the list - 1/5 5:53
         # genres_available = animeNestedJikan[counter]['genres'][genreCounter]
         print(genreCounter,"counter genre here: ",genres_available[genreCounter])
+        if dummy_genre in genres_available[genreCounter]['name'].lower():
+            print("dummy text was found!")
+        else:
+            print("dummy text not found and was : ", dummy_genre)
         genreCounter+=1
 
     else:
@@ -106,6 +110,26 @@ while counter < lengthOfAnimeAmmt:
         genreCounter = 0
         counter+=1
         
+
+
+
+
+
+
+
+# # loop version
+# # for eachChoice in choice:
+#     if dummy_genre in genres_available:
+#         print("dummy text was found!")
+#     else:
+#         print("dummy text not found")
+
+# # change below to anime genre looping
+# for eachChoice in choice:
+#     if dummy_genre in choice:
+#         print("dummy text was found!")
+#     else:
+        print("dummy text not found")
 
         #! The loop is working! Need to add in the checker for the dummy text to see if the anime contains the text in at least on eof the genres, once it does, the loop can stop (or not) and put the anime into a set
 
@@ -278,14 +302,6 @@ while counter < lengthOfAnimeAmmt:
 
 
 
-
-
-# change below to anime genre looping
-for eachChoice in choice:
-    if dummy_genre in choice:
-        print("dummy text was found!")
-    else:
-        print("dummy text not found")
 
 
 
