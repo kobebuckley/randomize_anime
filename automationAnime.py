@@ -130,6 +130,8 @@ genreCounter = 0
 
 new_list = []
 unique_list = set(new_list)
+filtered_anime_list = []
+unique_filtered_anime_list = set(filtered_anime_list)
 # currentSelection = []
 # finalSelection = []
 
@@ -159,7 +161,8 @@ while counter < lengthOfAnimeAmmt:
 # #! seems to only grab one genre, needs all of the genres from the list - 1/5 5:53
 #         genres_available = animeNestedJikan[counter]['genres'][genreCounter]
         genres_available = animeNestedJikan[counter]['genres'][genreCounter]
-
+        temp_anime_holder = animeNestedJikan[counter]
+        print("current anime being check is : ", animeNestedJikan[counter]['url'])
         print("name : ",genres_available['name'] )
         # temp_name_holder = []
         temp_name_holder = str(genres_available['name']).lower()
@@ -170,6 +173,10 @@ while counter < lengthOfAnimeAmmt:
     result = all(ele in unique_list for ele in choice)
     if result == True:
         print("SUCCESS! ALL WERE FOUND")
+     
+        filtered_anime_list.append(animeNestedJikan[counter]['url']) # adding this specific anime that meets the above conditions into the filtered list
+        unique_filtered_anime_list = set(filtered_anime_list)
+        print("the new current anime list is: ", unique_filtered_anime_list)
         genreCounter = 0
         counter +=1
         new_list = []
