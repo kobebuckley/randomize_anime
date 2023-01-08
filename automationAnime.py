@@ -37,16 +37,73 @@ import easygui as eg
 
 question = "What type of anime would u like?"
 title = "Select One (for now) "
-listOfOptions = ["action", "comedy", "sci-fi"]
+listOfOptions = ["action", "sci-fi"]
 
 choice = eg.multchoicebox(question , title, listOfOptions)
 
-print("choices are : ", choice)
+# print("choices are : ", choice)
 
 length_of_choices = len(choice)
-print("length of choices selected are : ", length_of_choices)
+# print("length of choices selected are : ", length_of_choices)
 dummy_genre = 'action' #make sure all text is lowered by default when taken from user
 # dummy_genre_list = ['action', 'mystery'] #make sure all text is lowered by default when taken from user
+
+
+
+# dummy_list = str(choice).lower() #just in case, lowering
+print("choices are : ", choice)
+
+
+
+#! 1/7 - making the list checker comparison --------------------------------------------------------------------------------
+
+# Python3 code to demonstrate working of
+# # Test if all elements are present in list
+# # Using list comprehension + all()
+ 
+# # initializing list
+# target_list = [6, 4, 8, 9, 10]
+ 
+# # initializing test list
+# test_list = [4, 6, 9]
+ 
+# # printing lists
+# print("The target list : " + str(target_list))
+# print("The test list : " + str(test_list))
+ 
+
+
+# # Test if all elements are present in list
+# # Using list comprehension + all()
+# res = all(ele in target_list for ele in test_list)
+ 
+# # Printing result
+# print("Does every element of test_list is in target_list ? : " + str(res))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#! --------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 # -------------------------------------------------------------------------------------------------------------------------
@@ -71,8 +128,10 @@ counter = 0
 
 genreCounter = 0
 
-currentSelection = []
-finalSelection = []
+new_list = []
+unique_list = set(new_list)
+# currentSelection = []
+# finalSelection = []
 
 # for x in animeNestedJikan[:]:
 #! need to find out why genre isn't properly working - 5:25 - 1/5
@@ -90,26 +149,65 @@ while counter < lengthOfAnimeAmmt:
     genreLength = len(animeNestedJikan[counter]['genres'])
     print("amount of genres are : ", genreLength)
 
-    genres_available = animeNestedJikan[counter]['genres']
+
 
     # print("amount of genres are : ", genreLength)
 
     print("genre counter is : ",genreCounter)
     while genreCounter < genreLength:
-        # genres_available = animeNestedJikan[counter]['genres']
-#! seems to only grab one genre, needs all of the genres from the list - 1/5 5:53
-        # genres_available = animeNestedJikan[counter]['genres'][genreCounter]
-        print(genreCounter,"counter genre here: ",genres_available[genreCounter])
-        if dummy_genre in genres_available[genreCounter]['name'].lower():
-            print("dummy text was found!")
-        else:
-            print("dummy text not found and was : ", dummy_genre)
-        genreCounter+=1
+#         # genres_available = animeNestedJikan[counter]['genres']
+# #! seems to only grab one genre, needs all of the genres from the list - 1/5 5:53
+#         genres_available = animeNestedJikan[counter]['genres'][genreCounter]
+        genres_available = animeNestedJikan[counter]['genres'][genreCounter]
 
-    else:
-        print("done with the genres in this anime, moving onto next anime")
+        print("name : ",genres_available['name'] )
+        # temp_name_holder = []
+        temp_name_holder = str(genres_available['name']).lower()
+        new_list.append(temp_name_holder)
+        unique_list = set(new_list)
+        genreCounter+=1
+    print("new list is, ", unique_list)
+    result = all(ele in unique_list for ele in choice)
+    if result == True:
+        print("SUCCESS! ALL WERE FOUND")
         genreCounter = 0
-        counter+=1
+        counter +=1
+        new_list = []
+    else:
+        print("NOT ALL WERE FOUND")
+        genreCounter = 0
+        counter +=1
+        new_list = []
+
+    
+#         temp_list_checker = new_list.append(genres_available)
+#         print("NEW LIST : ", temp_list_checker)
+# #         print(genreCounter,"counter genre here: ",genres_available[genreCounter])
+
+#         # Test if all elements are present in list
+#         # Using list comprehension + all()
+#         result = all(ele in genres_available for ele in choice)
+ 
+#         # Printing result
+#         print("Is every element of choice in genres_available? : " + str(result))
+
+
+
+
+
+    #     if result == True:
+    #             print("all choices were found!")
+    #     if genreCounter < genreLength:
+    #             print("not all choices were found : ", str(choice).upper())
+    #             print("the genres found in this anime are : ", str(genres_available['name']).upper())
+    #             genreCounter +=1
+
+    # # genreCounter+=1
+
+    #     else:
+    #         print("done with the genres in this anime, moving onto next anime, also sidenote that we need to add to / keep in a set")
+    #         genreCounter = 0
+    #         counter+=1
         
 
 
