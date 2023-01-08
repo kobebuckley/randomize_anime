@@ -1,10 +1,7 @@
 from random import choice
 import requests
 
-
-
 #jikan - anime api
-
 
 #! the url query (?) should change depending on the checbox inputs of the user. 
 #! the anime page also has multiple pages, so that needs to be accounted for when it comes down to all the data (likely chaning the Pagination will be the key?)
@@ -17,8 +14,6 @@ response.status_code
 #! ?genres=1  -> possible query to add to the above url ?genres=choice[]???
 
 #! genre - name
-
-
 
 
 # #! important query section
@@ -123,6 +118,9 @@ while counter < lengthOfAnimeAmmt:
         genreCounter = 0
         counter +=1
         new_list = []
+
+
+print("The amount of anime that meet your selections are: " , len(unique_filtered_anime_list))
 
 
 
