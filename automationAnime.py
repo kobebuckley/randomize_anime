@@ -1,6 +1,10 @@
 from random import choice
 import requests
 
+# panda imports
+import numpy as np
+import pandas as pd
+
 #jikan - anime api
 
 #! the url query (?) should change depending on the checbox inputs of the user. 
@@ -65,6 +69,11 @@ new_list = []
 unique_list = set(new_list)
 filtered_anime_list = []
 unique_filtered_anime_list = set(filtered_anime_list)
+
+
+testing_data = []
+
+
 # currentSelection = []
 # finalSelection = []
 
@@ -95,7 +104,7 @@ while counter < lengthOfAnimeAmmt:
 #         genres_available = animeNestedJikan[counter]['genres'][genreCounter]
         genres_available = animeNestedJikan[counter]['genres'][genreCounter]
         temp_anime_holder = animeNestedJikan[counter]
-        print("current anime being check is : ", animeNestedJikan[counter]['url'])
+        print("current anime being checked is : ", animeNestedJikan[counter]['url'])
         print("name : ",genres_available['name'] )
         # temp_name_holder = []
         temp_name_holder = str(genres_available['name']).lower()
@@ -106,7 +115,7 @@ while counter < lengthOfAnimeAmmt:
     result = all(ele in unique_list for ele in choice)
     if result == True:
         print("SUCCESS! ALL WERE FOUND")
-     
+        testing_data.append(animeNestedJikan[counter])
         filtered_anime_list.append(animeNestedJikan[counter]['url']) # adding this specific anime that meets the above conditions into the filtered list
         unique_filtered_anime_list = set(filtered_anime_list)
         print("the new current anime list is: ", unique_filtered_anime_list)
@@ -122,6 +131,13 @@ while counter < lengthOfAnimeAmmt:
 
 print("The amount of anime that meet your selections are: " , len(unique_filtered_anime_list))
 
+#! maybe can randomize through all the data and send each option back? Similar to what is below this
+print("*** Url for the anime selected is :" , (testing_data[7]['url']))
+print("*** Japanese Title for the anime selected is:" , (testing_data[7]['title_japanese']))
+print("*** English Title for the anime selected is:" , (testing_data[7]['title_english']))
+#! can make a fuction for the above code, for printing out miltiple pieces of data
+
+
 
 
 # # advanced (apit] - dataframes)
@@ -129,3 +145,17 @@ print("The amount of anime that meet your selections are: " , len(unique_filtere
 
 # #pandas
 #pandas - dataframe
+
+
+
+
+
+#? STARTING NEW VERSION HERE, TO EVENTUALLY CONVERT FROM THE TOP SECTION
+
+# import numpy as np
+# import pandas as pd
+
+# df = pd.DataFrame(unique_filtered_anime_list)
+# # df.head()
+
+# print("pandas data frame here: ", df.head())
