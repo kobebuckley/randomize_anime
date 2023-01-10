@@ -149,7 +149,6 @@ print("*** English Title for the anime selected is:" , (testing_data[7]['title_e
 
 
 
-
 #? STARTING NEW VERSION HERE, TO EVENTUALLY CONVERT FROM THE TOP SECTION
 
 # import numpy as np
@@ -159,3 +158,6 @@ print("*** English Title for the anime selected is:" , (testing_data[7]['title_e
 # # df.head()
 
 # print("pandas data frame here: ", df.head())
+
+#? description, title, image, summary, character description - > so people can easily choose a new anime to watch? 
+#? Adding the datafram to make it cleaner?
