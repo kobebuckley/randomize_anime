@@ -1,4 +1,5 @@
 from random import choice
+import random
 import requests
 
 # panda imports
@@ -129,15 +130,29 @@ while counter < lengthOfAnimeAmmt:
         new_list = []
 
 
-print("The amount of anime that meet your selections are: " , len(unique_filtered_anime_list))
 
+current_length_minus_1 = len(unique_filtered_anime_list) - 1
+print("The amount of anime that meet your selections are: " , len(unique_filtered_anime_list))
 #! maybe can randomize through all the data and send each option back? Similar to what is below this
 print("*** Url for the anime selected is :" , (testing_data[7]['url']))
+the_url = ['url']
 print("*** Japanese Title for the anime selected is:" , (testing_data[7]['title_japanese']))
 print("*** English Title for the anime selected is:" , (testing_data[7]['title_english']))
-#! can make a fuction for the above code, for printing out miltiple pieces of data
 
+#! random 
+#! making a class?
 
+random_number = random.randint(0, current_length_minus_1)
+
+print("*** English Title for the RANDOM anime selected is:" , (testing_data[random_number]['title_english']))
+print("the length parameteres being shown are: ",current_length_minus_1)
+
+# def print_info():
+#     print("this works!")
+#! can make a fuction for the above code, for printing out multiple pieces of data
+
+#! random 
+#! remove button 
 
 
 # # advanced (apit] - dataframes)
@@ -154,10 +169,22 @@ print("*** English Title for the anime selected is:" , (testing_data[7]['title_e
 # import numpy as np
 # import pandas as pd
 
-# df = pd.DataFrame(unique_filtered_anime_list)
+# #!Japanese Title : Eng Title : Image 1 : Summary : Description 
+# df = pd.DataFrame(response.json()['data'])
 # # df.head()
 
-# print("pandas data frame here: ", df.head())
+# print("pandas data frame here: ", df)
+
+
+
+# pd.DataFrame.from_dict(data)
+df = pd.DataFrame.from_dict(testing_data[1],orient='index',
+                       columns=['the_url'])
+# df.head()
+
+print("pandas data frame here:", df)
+
 
 #? description, title, image, summary, character description - > so people can easily choose a new anime to watch? 
-#? Adding the datafram to make it cleaner?
+#? Adding the dataframe to make it cleaner?
+#? Adding pagination?
