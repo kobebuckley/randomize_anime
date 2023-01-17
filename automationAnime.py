@@ -216,6 +216,8 @@ print("The English for the currently selected anime is :", d['English'][0])
 
 #? future ideas to expand : adding in if statements in case values of 'none' are shown as in the case with some japanese or english titles not being created. 
 
+#! starting to expand this project into Django and React. Using this code so far as the base foundation for the ideas and also conversion into frameworks.
+
 #-------------------------------------------------------------------------------------
 
 # Multi Anime Dataframe Loop
