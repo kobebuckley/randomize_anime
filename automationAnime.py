@@ -130,22 +130,36 @@ while counter < lengthOfAnimeAmmt:
         new_list = []
 
 
-
 current_length_minus_1 = len(unique_filtered_anime_list) - 1
-print("The amount of anime that meet your selections are: " , len(unique_filtered_anime_list))
-#! maybe can randomize through all the data and send each option back? Similar to what is below this
-print("*** Url for the anime selected is :" , (testing_data[7]['url']))
-the_url = ['url']
-print("*** Japanese Title for the anime selected is:" , (testing_data[7]['title_japanese']))
-print("*** English Title for the anime selected is:" , (testing_data[7]['title_english']))
-
-#! random 
-#! making a class?
 
 random_number = random.randint(0, current_length_minus_1)
 
-print("*** English Title for the RANDOM anime selected is:" , (testing_data[random_number]['title_english']))
+
+print("The amount of anime that meet your selections are: " , len(unique_filtered_anime_list))
+#! random 
+# print("*** Url for the anime selected is :" , (testing_data[random_number]['url']))
+
+# current_randomized_choice = testing_data[random_number]
+current_randomized_choice = random_number
+
+
+
+the_url = testing_data[current_randomized_choice]['url']
+the_eng = testing_data[current_randomized_choice]['title_english']
+the_japanese = testing_data[current_randomized_choice]['title_japanese']
+# print("*** Japanese Title for the anime selected is:" , (testing_data[random_number]['title_japanese']))
+# print("*** English Title for the anime selected is:" , (testing_data[random_number]['title_english']))
+
+#! making a class?
+
+
+# print("*** English Title for the RANDOM anime selected is:" , (testing_data[random_number]['title_english']))
 print("the length parameteres being shown are: ",current_length_minus_1)
+print("The current choice that was selected is : ", testing_data[current_randomized_choice])
+print("the url: ", the_url)
+print("japanese title: ", the_japanese)
+print("english title: ", the_eng)
+
 
 # def print_info():
 #     print("this works!")
@@ -170,20 +184,54 @@ print("the length parameteres being shown are: ",current_length_minus_1)
 # import pandas as pd
 
 # #!Japanese Title : Eng Title : Image 1 : Summary : Description 
-# df = pd.DataFrame(response.json()['data'])
+current_anime_selected = testing_data[current_randomized_choice]
+# df = pd.DataFrame(testing_data[current_randomized_choice])
 # # df.head()
 
 # print("pandas data frame here: ", df)
 
+# Creating a dictionary with 
+# equal elements
 
 
-# pd.DataFrame.from_dict(data)
-df = pd.DataFrame.from_dict(testing_data[1],orient='index',
-                       columns=['the_url'])
-# df.head()
 
-print("pandas data frame here:", df)
+# Singular Anime Dataframe
+d = {
+    'Url':[current_anime_selected['url']],
+    'Japanese':[current_anime_selected['title_japanese']],
+    'English':[current_anime_selected['title_english']]
+}
 
+# Creating a DataFrame
+df = pd.DataFrame(d)
+
+# Display DataFrame
+print("Created Singular DataFrame:\n",df.head())
+
+
+#! a great way to add the data into a new variable if needed, can maybe print the output / add to front end this way???
+print("The Url for the currently selected anime is :", d['Url'][0])
+print("The Japanese name for the currently selected anime is :", d['Japanese'][0])
+print("The English for the currently selected anime is :", d['English'][0])
+
+#? future ideas to expand : adding in if statements in case values of 'none' are shown as in the case with some japanese or english titles not being created. 
+
+#-------------------------------------------------------------------------------------
+
+# Multi Anime Dataframe Loop
+# d = {
+#     'Url':[['url']],
+#     'Japanese':[['title_japanese']],
+#     'English':[['title_english']]
+# }
+
+# Creating a DataFrame
+# df = pd.DataFrame(d)
+
+# Display DataFrame
+# print("Created Multi DataFrame:\n",df.head())
+
+#-------------------------------------------------------------------------------------
 
 #? description, title, image, summary, character description - > so people can easily choose a new anime to watch? 
 #? Adding the dataframe to make it cleaner?
